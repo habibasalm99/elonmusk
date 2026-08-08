@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version="2"
+      class="no-js"
+      expr:dir="data:blog.languageDirection"
+      expr:lang="data:blog.locale"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://www.google.com/2005/gml/b"
+      xmlns:data="http://www.google.com/2005/gml/data"
+      xmlns:expr="http://www.google.com/2005/gml/expr">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="dark" name="color-scheme"/>
+  <meta content="Tech, Web3, Blockchain, Open Source, Developer Documentation and Protocol Research" name="description"/>
+  <meta content="tech, web3, blockchain, bitcoin, ethereum, solana, open source, documentation, developers" name="keywords"/>
+  <meta content="index, follow" name="robots"/>
+
+  <title><data:blog.pageTitle/></title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    //<![CDATA[
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+          },
+          colors: {
+            ink: '#030712',
+            panel: '#0b1120',
+            line: '#1e293b',
+            amberx: '#f7931a'
+          },
+          boxShadow: {
+            glow: '0 0 40px rgba(247,147,26,.10)'
+          }
+        }
+      }
+    };
+    //]]>
+  </script>
+
+  <b:skin><![CDATA[
+    /*
+      ==========================================================
+      DEVPROTOCOL — BLOGGER THEME
+      ==========================================================
+    */
+
+    :root {
+      --bg: #030712;
+      --panel: #0b1120;
+      --panel-2: #0f172a;
+      --border: #1e293b;
+      --muted: #94a3b8;
+      --text: #f8fafc;
+      --accent: #f7931a;
+      --accent-soft: rgba(247, 147, 26, .10);
+      --success: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(247,147,26,.09), transparent 35%),
+        linear-gradient(180deg, #030712 0%, #050b16 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    ::selection {
+      background: rgba(247,147,26,.28);
+      color: #fff;
+    }
+
+    .site-shell {
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .site-shell:before {
+      background-image:
+        linear-gradient(rgba(148,163,184,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: fixed;
+      z-index: 0;
+    }
+
+    .site-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass {
+      background: rgba(11,17,32,.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .border-grid {
+      border: 1px solid var(--border);
+    }
+
+    .amber-text {
+      color: var(--accent);
+    }
+
+    .amber-glow {
+      box-shadow: 0 0 35px rgba(247,147,26,.09);
+    }
+
+    .nav-link {
+      color: #94a3b8;
+      transition: color .2s ease;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .btn-primary {
+      align-items: center;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: .65rem;
+      color: #111827;
+      display: inline-flex;
+      font-size: .875rem;
+      font-weight: 800;
+      gap: .5rem;
+      justify-content: center;
+      padding: .75rem 1rem;
+      transition: all .2s ease;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 28px rgba(247,147,26,.25);
+      filter: brightness(1.07);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      align-items: center;
+      background: rgba(15,23,42,.7);
+      border: 1px solid var(--border);
+      border-radius: .65rem;
+      color: #e2e8f0;
+      display: inline-flex;
+      font-size: .875rem;
+      font-weight: 700;
+      gap: .5rem;
+      justify-content: center;
+      padding: .75rem 1rem;
+      transition: all .2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #111827;
+      border-color: #475569;
+      transform: translateY(-1px);
+    }
+
+    .status-dot {
+      animation: pulse-status 2s infinite;
+      background: var(--success);
+      border-radius: 999px;
+      display: inline-block;
+      height: 7px;
+      width: 7px;
+    }
+
+    @keyframes pulse-status {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(34,197,94,.35);
+      }
+      50% {
+        box-shadow: 0 0 0 7px rgba(34,197,94,0);
+      }
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 1rem;
+      min-width: max-content;
+    }
+
+    .ticker-card {
+      background: rgba(15,23,42,.72);
+      border: 1px solid var(--border);
+      border-radius: .8rem;
+      min-width: 185px;
+      padding: .9rem;
+    }
+
+    .ticker-price {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .price-change {
+      font-family: "JetBrains Mono", monospace;
+      font-size: .7rem;
+    }
+
+    .positive {
+      color: #4ade80;
+    }
+
+    .negative {
+      color: #fb7185;
+    }
+
+    .code-window {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: .85rem;
+      overflow: hidden;
+    }
+
+    .code-window pre {
+      margin: 0;
+      max-height: 360px;
+      overflow: auto;
+      padding: 1.25rem;
+      scrollbar-color: #334155 #020617;
+    }
+
+    .code-window code {
+      color: #cbd5e1;
+      font-family: "JetBrains Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.75;
+      white-space: pre;
+    }
+
+    .tool-input {
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: .65rem;
+      color: #f8fafc;
+      outline: none;
+      padding: .75rem .8rem;
+      width: 100%;
+    }
+
+    .tool-input:focus {
+      border-color: rgba(247,147,26,.7);
+      box-shadow: 0 0 0 3px rgba(247,147,26,.08);
+    }
+
+    .article-card {
+      background: rgba(11,17,32,.8);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      overflow: hidden;
+      position: relative;
+      transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+
+    .article-card:hover {
+      border-color: #475569;
+      box-shadow: 0 18px 50px rgba(0,0,0,.2);
+      transform: translateY(-4px);
+    }
+
+    .article-card:after {
+      background: linear-gradient(90deg, transparent, rgba(247,147,26,.8), transparent);
+      content: "";
+      height: 1px;
+      left: -100%;
+      position: absolute;
+      top: 0;
+      transition: left .5s ease;
+      width: 100%;
+    }
+
+    .article-card:hover:after {
+      left: 100%;
+    }
+
+    .tag {
+      background: rgba(247,147,26,.08);
+      border: 1px solid rgba(247,147,26,.18);
+      border-radius: 999px;
+      color: #fbbf24;
+      display: inline-flex;
+      font-family: "JetBrains Mono", monospace;
+      font-size: .66rem;
+      font-weight: 600;
+      padding: .3rem .55rem;
+    }
+
+    .article-arrow {
+      color: #64748b;
+      transition: transform .2s ease, color .2s ease;
+    }
+
+    .article-card:hover .article-arrow {
+      color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    .divider {
+      border-color: var(--border);
+    }
+
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .25s ease;
+    }
+
+    .mobile-menu.open {
+      max-height: 400px;
+    }
+
+    .copy-feedback {
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+
+    .copy-feedback.show {
+      opacity: 1;
+    }
+
+    .number-output {
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    @media (max-width: 767px) {
+      .hero-title {
+        font-size: 2.5rem !important;
+        line-height: 1.05 !important;
+      }
+
+      .ticker-card {
+        min-width: 165px;
+      }
+    }
+  ]]></b:skin>
+
+  <b:template-skin><![CDATA[
+    body {
+      margin: 0;
+    }
+  ]]></b:template-skin>
+</head>
+
+<body>
+  <div class="site-shell">
+    <div class="site-content">
+
+      <!-- ======================================================
+           HEADER
+      ======================================================= -->
+      <header class="glass sticky top-0 z-50 border-b border-slate-800/80">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+
+            <a class="flex items-center gap-3" expr:href="data:blog.homepageUrl">
+              <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f7931a] text-sm font-black text-slate-950">
+                <i class="fa-solid fa-terminal"></i>
+              </span>
+              <span class="font-mono text-sm font-bold tracking-tight text-white">
+                <data:blog.title/>
+              </span>
+            </a>
+
+            <nav class="hidden items-center gap-7 md:flex">
+              <a class="nav-link text-sm font-medium" href="#docs">Documentation</a>
+              <a class="nav-link text-sm font-medium" href="#guides">Guides</a>
+              <a class="nav-link text-sm font-medium" href="#markets">Markets</a>
+              <a class="nav-link text-sm font-medium" href="#utilities">Utilities</a>
+              <a class="nav-link text-sm font-medium" href="#opensource">Open Source</a>
+            </nav>
+
+            <div class="hidden md:block">
+              <a class="btn-primary" href="#docs">
+                Start Building
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+
+            <button aria-label="Open menu"
+                    class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 text-slate-300 md:hidden"
+                    id="menuButton"
+                    type="button">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <div class="mobile-menu md:hidden" id="mobileMenu">
+            <nav class="flex flex-col gap-1 border-t border-slate-800 py-3">
+              <a class="rounded-lg px-3 py-3 text-sm text-slate-300 hover:bg-slate-900" href="#docs">Documentation</a>
+              <a class="rounded-lg px-3 py-3 text-sm text-slate-300 hover:bg-slate-900" href="#guides">Guides</a>
+              <a class="rounded-lg px-3 py-3 text-sm text-slate-300 hover:bg-slate-900" href="#markets">Markets</a>
+              <a class="rounded-lg px-3 py-3 text-sm text-slate-300 hover:bg-slate-900" href="#utilities">Utilities</a>
+              <a class="rounded-lg px-3 py-3 text-sm text-slate-300 hover:bg-slate-900" href="#opensource">Open Source</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main>
+
+        <!-- ====================================================
+             HERO
+        ===================================================== -->
+        <section class="mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 sm:pt-24 lg:px-8">
+          <div class="grid items-center gap-12 lg:grid-cols-[1.35fr_.65fr]">
+
+            <div>
+              <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1.5 font-mono text-[11px] font-medium text-emerald-400">
+                <span class="status-dot"></span>
+                ALL SYSTEMS OPERATIONAL
+              </div>
+
+              <h1 class="hero-title max-w-4xl text-5xl font-extrabold leading-[1.02] tracking-[-.04em] text-white sm:text-6xl lg:text-7xl">
+                Build on the
+                <span class="amber-text">open protocol.</span>
+              </h1>
+
+              <p class="mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+                A technical knowledge base for developers building with Web3,
+                blockchain infrastructure, open-source software, and decentralized protocols.
+              </p>
+
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a class="btn-primary" href="#docs">
+                  <i class="fa-solid fa-book-open"></i>
+                  Explore Documentation
+                </a>
+                <a class="btn-secondary" href="#utilities">
+                  <i class="fa-solid fa-wrench"></i>
+                  Developer Utilities
+                </a>
+              </div>
+
+              <div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[11px] text-slate-500">
+                <span><i class="fa-solid fa-code mr-2 text-slate-600"></i>OPEN SOURCE</span>
+                <span><i class="fa-solid fa-shield-halved mr-2 text-slate-600"></i>VERIFIABLE</span>
+                <span><i class="fa-solid fa-bolt mr-2 text-slate-600"></i>PERFORMANCE FIRST</span>
+              </div>
+            </div>
+
+            <div class="amber-glow relative">
+              <div class="absolute -inset-8 rounded-full bg-orange-500/5 blur-3xl"></div>
+              <div class="glass relative rounded-2xl border border-slate-800 p-5">
+                <div class="mb-5 flex items-center justify-between">
+                  <div>
+                    <div class="font-mono text-[10px] uppercase tracking-[.2em] text-slate-500">Protocol Node</div>
+                    <div class="mt-1 text-sm font-semibold text-slate-200">Developer Network</div>
+                  </div>
+                  <span class="rounded-md border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 font-mono text-[10px] text-emerald-400">
+                    ONLINE
+                  </span>
+                </div>
+
+                <div class="rounded-xl border border-slate-800 bg-slate-950 p-4">
+                  <div class="mb-4 flex items-center justify-between">
+                    <span class="font-mono text-[10px] text-slate-500">NETWORK_STATUS</span>
+                    <span class="font-mono text-[10px] text-emerald-400">CONNECTED</span>
+                  </div>
+
+                  <div class="space-y-3 font-mono text-xs">
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">transport</span>
+                      <span class="text-slate-300">HTTPS / TLS 1.3</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">runtime</span>
+                      <span class="text-slate-300">EDGE</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">availability</span>
+                      <span class="text-emerald-400">99.99%</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-600">latency</span>
+                      <span class="text-slate-300">~42ms</span>
+                    </div>
+                  </div>
+
+                  <div class="mt-5 h-1 overflow-hidden rounded-full bg-slate-800">
+                    <div class="h-full w-[99%] rounded-full bg-[#f7931a]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================
+             MARKET TICKER
+        ===================================================== -->
+        <section class="border-y border-slate-800/80 bg-slate-950/50" id="markets">
+          <div class="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
+            <div class="mb-3 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#f7931a]"></span>
+                <span class="font-mono text-[10px] font-bold uppercase tracking-[.2em] text-slate-500">Live Market Data</span>
+              </div>
+              <span class="font-mono text-[10px] text-slate-600" id="marketStatus">SYNCING...</span>
+            </div>
+
+            <div class="overflow-x-auto pb-1">
+              <div class="ticker-track" id="tickerTrack">
+
+                <div class="ticker-card">
+                  <div class="mb-2 flex items-center justify-between">
+                    <span class="font-mono text-xs font-bold text-slate-200">BTC</span>
+                    <span class="text-[10px] text-slate-600">BITCOIN</span>
+                  </div>
+                  <div class="ticker-price" id="btcPrice">$--</div>
+                  <div class="price-change mt-1" id="btcChange">--</div>
+                </div>
+
+                <div class="ticker-card">
+                  <div class="mb-2 flex items-center justify-between">
+                    <span class="font-mono text-xs font-bold text-slate-200">ETH</span>
+                    <span class="text-[10px] text-slate-600">ETHEREUM</span>
+                  </div>
+                  <div class="ticker-price" id="ethPrice">$--</div>
+                  <div class="price-change mt-1" id="ethChange">--</div>
+                </div>
+
+                <div class="ticker-card">
+                  <div class="mb-2 flex items-center justify-between">
+                    <span class="font-mono text-xs font-bold text-slate-200">SOL</span>
+                    <span class="text-[10px] text-slate-600">SOLANA</span>
+                  </div>
+                  <div class="ticker-price" id="solPrice">$--</div>
+                  <div class="price-change mt-1" id="solChange">--</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================
+             DOCUMENTATION / CARDS
+        ===================================================== -->
+        <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" id="docs">
+          <div class="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <div class="font-mono text-[10px] font-bold uppercase tracking-[.2em] text-[#f7931a]">Knowledge Base</div>
+              <h2 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Developer documentation.</h2>
+              <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
+                Practical references, architecture notes, protocol explainers, and implementation guides.
+              </p>
+            </div>
+            <a class="font-mono text-xs font-semibold text-slate-400 transition hover:text-white" href="#guides">
+              VIEW ALL GUIDES <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+            </a>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" id="guides">
+
+            <article class="article-card p-6">
+              <div class="mb-8 flex items-start justify-between">
+                <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-[#f7931a]">
+                  <i class="fa-solid fa-cubes"></i>
+                </span>
+                <span class="tag">WEB3</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-white">Understanding Blockchain Architecture</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                  Explore blocks, transactions, consensus, nodes, state, and the mechanics behind decentralized networks.
+                </p>
+              </div>
+              <a class="mt-7 flex items-center justify-between border-t border-slate-800 pt-5 font-mono text-[11px] font-semibold text-slate-400" href="#">
+                READ DOCUMENTATION
+                <i class="article-arrow fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="article-card p-6">
+              <div class="mb-8 flex items-start justify-between">
+                <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-[#f7931a]">
+                  <i class="fa-solid fa-network-wired"></i>
+                </span>
+                <span class="tag">PROTOCOLS</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-white">Designing Reliable API Systems</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                  Patterns for versioning, authentication, rate limiting, observability, caching, and resilient API design.
+                </p>
+              </div>
+              <a class="mt-7 flex items-center justify-between border-t border-slate-800 pt-5 font-mono text-[11px] font-semibold text-slate-400" href="#">
+                READ DOCUMENTATION
+                <i class="article-arrow fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="article-card p-6">
+              <div class="mb-8 flex items-start justify-between">
+                <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-[#f7931a]">
+                  <i class="fa-brands fa-github"></i>
+                </span>
+                <span class="tag">OPEN SOURCE</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-white">Open-Source Project Playbook</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                  A practical framework for repositories, contribution workflows, releases, documentation, and maintainability.
+                </p>
+              </div>
+              <a class="mt-7 flex items-center justify-between border-t border-slate-800 pt-5 font-mono text-[11px] font-semibold text-slate-400" href="#">
+                READ DOCUMENTATION
+                <i class="article-arrow fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="article-card p-6">
+              <div class="mb-8 flex items-start justify-between">
+                <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-[#f7931a]">
+                  <i class="fa-brands fa-bitcoin"></i>
+                </span>
+                <span class="tag">BITCOIN</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-white">Bitcoin Transactions Explained</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                  Learn how UTXOs, inputs, outputs, fees, signatures, mempools, and confirmations work together.
+                </p>
+              </div>
+              <a class="mt-7 flex items-center justify-between border-t border-slate-800 pt-5 font-mono text-[11px] font-semibold text-slate-400" href="#">
+                READ DOCUMENTATION
+                <i class="article-arrow fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="article-card p-6">
+              <div class="mb-8 flex items-start justify-between">
+                <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-[#f7931a]">
+                  <i class="fa-solid fa-file-contract"></i>
+                </span>
+                <span class="tag">WHITEPAPER</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-white">Protocol Research Notes</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                  Concise technical breakdowns of distributed systems, cryptography, incentives, and protocol economics.
+                </p>
+              </div>
+              <a class="mt-7 flex items-center justify-between border-t border-slate-800 pt-5 font-mono text-[11px] font-semibold text-slate-400" href="#">
+                READ DOCUMENTATION
+                <i class="article-arrow fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+            <article class="article-card p-6">
+              <div class="mb-8 flex items-start justify-between">
+                <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-[#f7931a]">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </span>
+                <span class="tag">SECURITY</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-white">Web Security Fundamentals</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                  Security fundamentals covering browser boundaries, authentication, sessions, secrets, and secure APIs.
+                </p>
+              </div>
+              <a class="mt-7 flex items-center justify-between border-t border-slate-800 pt-5 font-mono text-[11px] font-semibold text-slate-400" href="#">
+                READ DOCUMENTATION
+                <i class="article-arrow fa-solid fa-arrow-right"></i>
+              </a>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ====================================================
+             DEVELOPER UTILITIES
+        ===================================================== -->
+        <section class="border-y border-slate-800/80 bg-slate-950/40" id="utilities">
+          <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+
+            <div class="mb-10">
+              <div class="font-mono text-[10px] font-bold uppercase tracking-[.2em] text-[#f7931a]">Developer Utilities</div>
+              <h2 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Small tools. Fast answers.</h2>
+              <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
+                Lightweight browser-side utilities for common development and Web3 workflows.
+              </p>
+            </div>
+
+            <div class="grid gap-5 lg:grid-cols-2">
+
+              <!-- UNIT CONVERTER -->
+              <div class="glass rounded-2xl border border-slate-800 p-6 sm:p-7">
+                <div class="mb-6 flex items-center justify-between">
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f7931a]/10 text-[#f7931a]">
+                        <i class="fa-solid fa-calculator"></i>
+                      </span>
+                      <h3 class="font-bold text-white">BTC Unit Converter</h3>
+                    </div>
+                    <p class="mt-3 text-xs leading-5 text-slate-500">
+                      Convert Bitcoin to satoshis and estimate its USD value.
+                    </p>
+                  </div>
+                </div>
+
+                <label class="mb-2 block font-mono text-[10px] uppercase tracking-widest text-slate-500" for="btcInput">
+                  BTC Amount
+                </label>
+
+                <div class="relative">
+                  <input class="tool-input pr-14 font-mono text-sm"
+                         id="btcInput"
+                         inputmode="decimal"
+                         min="0"
+                         placeholder="0.01000000"
+                         step="any"
+                         type="number"
+                         value="0.01"/>
+                  <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 font-mono text-xs text-slate-600">BTC</span>
+                </div>
+
+                <div class="mt-5 grid gap-3 sm:grid-cols-2">
+                  <div class="rounded-xl border border-slate-800 bg-slate-950 p-4">
+                    <div class="font-mono text-[10px] uppercase tracking-wider text-slate-600">Satoshis</div>
+                    <div class="number-output mt-2 text-lg font-semibold text-slate-200" id="satsOutput">1,000,000</div>
+                  </div>
+                  <div class="rounded-xl border border-slate-800 bg-slate-950 p-4">
+                    <div class="font-mono text-[10px] uppercase tracking-wider text-slate-600">Estimated USD</div>
+                    <div class="number-output mt-2 text-lg font-semibold text-[#f7931a]" id="usdOutput">$--</div>
+                  </div>
+                </div>
+
+                <div class="mt-4 flex items-center justify-between font-mono text-[10px] text-slate-600">
+                  <span>1 BTC = 100,000,000 SATS</span>
+                  <span id="converterRate">RATE: --</span>
+                </div>
+              </div>
+
+              <!-- CODE SNIPPET -->
+              <div class="glass rounded-2xl border border-slate-800 p-6 sm:p-7">
+                <div class="mb-5 flex items-center justify-between gap-4">
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#f7931a]/10 text-[#f7931a]">
+                        <i class="fa-solid fa-code"></i>
+                      </span>
+                      <h3 class="font-bold text-white">API Fetch Snippet</h3>
+                    </div>
+                    <p class="mt-3 text-xs leading-5 text-slate-500">
+                      A minimal browser-side request pattern.
+                    </p>
+                  </div>
+
+                  <button class="btn-secondary shrink-0 !px-3 !py-2 text-xs"
+                          id="copyCodeButton"
+                          type="button">
+                    <i class="fa-regular fa-copy"></i>
+                    Copy
+                  </button>
+                </div>
+
+                <div class="code-window">
+                  <div class="flex items-center justify-between border-b border-slate-800 bg-slate-900/70 px-4 py-3">
+                    <div class="flex gap-1.5">
+                      <span class="h-2.5 w-2.5 rounded-full bg-slate-700"></span>
+                      <span class="h-2.5 w-2.5 rounded-full bg-slate-700"></span>
+                      <span class="h-2.5 w-2.5 rounded-full bg-slate-700"></span>
+                    </div>
+                    <span class="font-mono text-[10px] text-slate-600">fetch.js</span>
+                    <span class="copy-feedback font-mono text-[10px] text-emerald-400" id="copyFeedback">COPIED</span>
+                  </div>
+
+                  <pre id="codeSource"><code>const response = await fetch(
+  "https://api.example.com/v1/data",
+  {
+    headers: {
+      "Accept": "application/json"
+    }
+  }
+);
+
+if (!response.ok) {
+  throw new Error("Request failed");
+}
+
+const data = await response.json();
+console.log(data);</code></pre>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================
+             OPEN SOURCE
+        ===================================================== -->
+        <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" id="opensource">
+          <div class="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-950 p-7 sm:p-10">
+            <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+              <div>
+                <div class="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[.2em] text-[#f7931a]">
+                  <i class="fa-brands fa-github"></i>
+                  Open Source First
+                </div>
+                <h2 class="mt-3 text-2xl font-bold text-white sm:text-3xl">
+                  Build knowledge that compounds.
+                </h2>
+                <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
+                  Documentation should be searchable, understandable, and useful.
+                  Explore the portal, adapt the examples, and contribute improvements back to the ecosystem.
+                </p>
+              </div>
+
+              <a class="btn-primary" href="#docs">
+                Browse the Portal
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ======================================================
+           FOOTER
+      ======================================================= -->
+      <footer class="border-t border-slate-800/80">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
+            <div>
+              <a class="flex items-center gap-3" expr:href="data:blog.homepageUrl">
+                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f7931a] text-xs font-black text-slate-950">
+                  <i class="fa-solid fa-terminal"></i>
+                </span>
+                <span class="font-mono text-sm font-bold text-white"><data:blog.title/></span>
+              </a>
+              <p class="mt-3 text-xs text-slate-600">
+                Technical documentation for the open web.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-5 font-mono text-[10px] uppercase tracking-wider text-slate-600">
+              <a class="transition hover:text-slate-300" href="#docs">Docs</a>
+              <a class="transition hover:text-slate-300" href="#guides">Guides</a>
+              <a class="transition hover:text-slate-300" href="#utilities">Tools</a>
+              <a class="transition hover:text-slate-300" href="#opensource">Open Source</a>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col justify-between gap-2 border-t border-slate-900 pt-6 font-mono text-[10px] text-slate-700 sm:flex-row">
+            <span>© <span id="currentYear">2026</span> <data:blog.title/>. ALL RIGHTS RESERVED.</span>
+            <span>BUILT FOR DEVELOPERS // POWERED BY THE OPEN WEB</span>
+          </div>
+        </div>
+      </footer>
+
+      <!-- ======================================================
+           HIDDEN BLOGGER BLOG WIDGET
+           Required for Blogger theme compatibility.
+      ======================================================= -->
+      <div style="display:none !important;">
+        <b:section id="hiddenBlogSection"
+                   class="hidden"
+                   maxwidgets="1"
+                   showaddelement="no">
+          <b:widget id="Blog1"
+                    type="Blog"
+                    title="Blog Posts"
+                    locked="true"/>
+        </b:section>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    //<![CDATA[
+    (function () {
+      "use strict";
+
+      var fallbackPrices = {
+        bitcoin: 65000,
+        ethereum: 3200,
+        solana: 150
+      };
+
+      var marketPrices = {
+        bitcoin: fallbackPrices.bitcoin,
+        ethereum: fallbackPrices.ethereum,
+        solana: fallbackPrices.solana
+      };
+
+      var priceFormatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
+
+      var compactFormatter = new Intl.NumberFormat("en-US", {
+        maximumFractionDigits: 2
+      });
+
+      function setText(id, value) {
+        var element = document.getElementById(id);
+        if (element) {
+          element.textContent = value;
+        }
+      }
+
+      function formatPrice(value) {
+        if (!Number.isFinite(value)) {
+          return "$--";
+        }
+
+        if (value >= 1000) {
+          return priceFormatter.format(value);
+        }
+
+        return "$" + value.toLocaleString("en-US", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 4
+        });
+      }
+
+      function updateTicker(data) {
+        var coins = [
+          {
+            key: "bitcoin",
+            priceId: "btcPrice",
+            changeId: "btcChange"
+          },
+          {
+            key: "ethereum",
+            priceId: "ethPrice",
+            changeId: "ethChange"
+          },
+          {
+            key: "solana",
+            priceId: "solPrice",
+            changeId: "solChange"
+          }
+        ];
+
+        coins.forEach(function (coin) {
+          var record = data[coin.key];
+
+          if (!record) {
+            return;
+          }
+
+          if (Number.isFinite(record.usd)) {
+            marketPrices[coin.key] = record.usd;
+          }
+
+          setText(coin.priceId, formatPrice(marketPrices[coin.key]));
+
+          var change = Number(record.usd_24h_change);
+
+          if (Number.isFinite(change)) {
+            var changeElement = document.getElementById(coin.changeId);
+
+            if (changeElement) {
+              changeElement.textContent =
+                (change >= 0 ? "+" : "") + change.toFixed(2) + "% / 24H";
+
+              changeElement.classList.remove("positive", "negative");
+              changeElement.classList.add(change >= 0 ? "positive" : "negative");
+            }
+          } else {
+            setText(coin.changeId, "LIVE RATE");
+          }
+        });
+
+        setText("marketStatus", "LIVE • COINGECKO");
+        updateConverter();
+      }
+
+      function useFallbackMarketData() {
+        updateTicker({
+          bitcoin: {
+            usd: fallbackPrices.bitcoin,
+            usd_24h_change: null
+          },
+          ethereum: {
+            usd: fallbackPrices.ethereum,
+            usd_24h_change: null
+          },
+          solana: {
+            usd: fallbackPrices.solana,
+            usd_24h_change: null
+          }
+        });
+
+        setText("marketStatus", "FALLBACK RATE");
+      }
+
+      function fetchMarketData() {
+        var endpoint =
+          "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Csolana&vs_currencies=usd&include_24hr_change=true";
+
+        fetch(endpoint, {
+          method: "GET",
+          headers: {
+            "Accept": "application/json"
+          }
+        })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Market API unavailable");
+          }
+
+          return response.json();
+        })
+        .then(function (data) {
+          updateTicker(data);
+        })
+        .catch(function () {
+          useFallbackMarketData();
+        });
+      }
+
+      function updateConverter() {
+        var input = document.getElementById("btcInput");
+        var satsOutput = document.getElementById("satsOutput");
+        var usdOutput = document.getElementById("usdOutput");
+        var converterRate = document.getElementById("converterRate");
+
+        if (!input || !satsOutput || !usdOutput) {
+          return;
+        }
+
+        var btc = Number.parseFloat(input.value);
+
+        if (!Number.isFinite(btc) || btc < 0) {
+          btc = 0;
+        }
+
+        var satoshis = Math.round(btc * 100000000);
+        var usd = btc * marketPrices.bitcoin;
+
+        satsOutput.textContent = compactFormatter.format(satoshis);
+        usdOutput.textContent = priceFormatter.format(usd);
+        converterRate.textContent =
+          "RATE: " + formatPrice(marketPrices.bitcoin);
+      }
+
+      function setupConverter() {
+        var input = document.getElementById("btcInput");
+
+        if (input) {
+          input.addEventListener("input", updateConverter);
+        }
+
+        updateConverter();
+      }
+
+      function setupCopyButton() {
+        var button = document.getElementById("copyCodeButton");
+        var source = document.getElementById("codeSource");
+        var feedback = document.getElementById("copyFeedback");
+
+        if (!button || !source) {
+          return;
+        }
+
+        button.addEventListener("click", function () {
+          var code = source.textContent.trim();
+
+          function showCopied() {
+            if (feedback) {
+              feedback.classList.add("show");
+
+              window.setTimeout(function () {
+                feedback.classList.remove("show");
+              }, 1800);
+            }
+          }
+
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(code)
+              .then(showCopied)
+              .catch(function () {
+                fallbackCopy(code, showCopied);
+              });
+          } else {
+            fallbackCopy(code, showCopied);
+          }
+        });
+      }
+
+      function fallbackCopy(text, callback) {
+        var textarea = document.createElement("textarea");
+
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try {
+          document.execCommand("copy");
+          callback();
+        } catch (error) {
+          /* Clipboard unavailable. */
+        }
+
+        document.body.removeChild(textarea);
+      }
+
+      function setupMobileMenu() {
+        var button = document.getElementById("menuButton");
+        var menu = document.getElementById("mobileMenu");
+
+        if (!button || !menu) {
+          return;
+        }
+
+        button.addEventListener("click", function () {
+          menu.classList.toggle("open");
+
+          var icon = button.querySelector("i");
+
+          if (icon) {
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-xmark");
+          }
+        });
+
+        menu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            menu.classList.remove("open");
+
+            var icon = button.querySelector("i");
+
+            if (icon) {
+              icon.classList.remove("fa-xmark");
+              icon.classList.add("fa-bars");
+            }
+          });
+        });
+      }
+
+      function setupYear() {
+        var year = document.getElementById("currentYear");
+
+        if (year) {
+          year.textContent = String(new Date().getFullYear());
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        setupMobileMenu();
+        setupConverter();
+        setupCopyButton();
+        setupYear();
+        fetchMarketData();
+
+        window.setInterval(fetchMarketData, 120000);
+      });
+    })();
+    //]]>
+  </script>
+</body>
+</html>
